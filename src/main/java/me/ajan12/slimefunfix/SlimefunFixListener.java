@@ -23,6 +23,7 @@ class SlimefunFixListener implements Listener {
         Utils utils = new Utils();
         if (utils.getGUI() != null) {
             if (utils.isGUI(event.getView())) {
+                if (event.getClickedInventory() == null) return;
                 InventoryHolder player = event.getClickedInventory().getHolder();
                 if (player == null) {
 

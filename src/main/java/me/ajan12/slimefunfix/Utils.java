@@ -65,6 +65,7 @@ final class Utils {
         try {
             guiName = config.getString("options.gui-name");
             if (guiName == null) guiName = getDefaultGUIName();
+            else guiName = ChatColor.translateAlternateColorCodes('&', guiName);
 
             Inventory inv = Bukkit.createInventory(null, 27, guiName);
 
@@ -84,7 +85,7 @@ final class Utils {
             }
 
             ItemStack iG = new CustomItem(Material.GREEN_STAINED_GLASS_PANE, ChatColor.YELLOW + "Как использовать?",
-                    ChatColor.AQUA + "Поместите сломанную Slimefun машину.", ChatColor.DARK_AQUA + "Примеры машин:");
+                    ChatColor.AQUA + "Поместите сломанный Slimefun предмет.", ChatColor.DARK_AQUA + "Пример:");
             for (Integer integer : HELP_SLOT) {
                 inv.setItem(integer, iG);
             }
@@ -108,7 +109,7 @@ final class Utils {
     boolean isGUI(InventoryView iv) { return iv.getTitle().equals(getGUIName()); }
 
     private String getDefaultGUIName() {
-        return ChatColor.YELLOW + "[" + ChatColor.GREEN + "SFFIX" + ChatColor.YELLOW + "] " + ChatColor.RED + " Интерфейс исправления.";
+        return ChatColor.DARK_PURPLE + " Интерфейс исправления.";
     }
 
     Integer[] getInputSlots() { return INPUT_SLOTS; }
