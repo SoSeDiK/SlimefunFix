@@ -109,7 +109,7 @@ final class Utils {
     boolean isGUI(InventoryView iv) { return iv.getTitle().equals(getGUIName()); }
 
     private String getDefaultGUIName() {
-        return ChatColor.DARK_PURPLE + " Интерфейс исправления.";
+        return ChatColor.DARK_PURPLE + "Интерфейс исправления.";
     }
 
     Integer[] getInputSlots() { return INPUT_SLOTS; }
