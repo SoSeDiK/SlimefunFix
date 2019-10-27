@@ -28,36 +28,36 @@ class SlimefunFixCommands implements CommandExecutor {
                         if (p.hasPermission("slimefunfix.use")) {
                             Inventory gui = utils.getGUI();
                             if (gui == null) {
-                                p.sendMessage(ChatColor.DARK_RED + "An error occurred while trying to create the GUI.");
-                                p.sendMessage(ChatColor.DARK_RED + "Please report this to an Administrator.");
+                                p.sendMessage(ChatColor.DARK_RED + "Произошла ошибка при попытке создать GUI.");
+                                p.sendMessage(ChatColor.DARK_RED + "Пожалуйста, сообщите администратору.");
                             } else p.openInventory(gui);
-                        } else p.sendMessage(ChatColor.DARK_RED + "You do not have permission to do this.");
+                        } else p.sendMessage(ChatColor.DARK_RED + "У Вас нет прав для этого.");
                         return true;
 
                     case "reload":
                         if (p.hasPermission("slimefunfix.reload")) {
-                            p.sendMessage(ChatColor.GREEN + "Reloading the plugin.");
+                            p.sendMessage(ChatColor.GREEN + "Плгин перезагружен.");
                             utils.reload();
-                        } else p.sendMessage(ChatColor.DARK_RED + "You do not have permission to do this.");
+                        } else p.sendMessage(ChatColor.DARK_RED + "У Вас нет прав для этого.");
                         return true;
                 }
             }
 
             String pluginTag = ChatColor.WHITE + "[" + ChatColor.DARK_AQUA + "SFFIX" + ChatColor.WHITE + "] ";
-            p.sendMessage(pluginTag + ChatColor.YELLOW + "/slimefunfix help" + ChatColor.GREEN + " to see how to fix your broken slimefun items.");
-            p.sendMessage(pluginTag + ChatColor.YELLOW + "/slimefunfix gui" + ChatColor.GREEN + " to fix your broken slimefun items.");
+            p.sendMessage(pluginTag + ChatColor.YELLOW + "/slimefunfix help" + ChatColor.GREEN + " для вывода помощи.");
+            p.sendMessage(pluginTag + ChatColor.YELLOW + "/slimefunfix gui" + ChatColor.GREEN + " для исправления сломанных Slimefun предметов.");
             return true;
 
         } else {
             if (args.length == 1 && args[0].equals("reload")) {
-                utils.info("Reloading the plugin.");
+                utils.info("Плгин перезагружен.");
                 utils.reload();
                 return true;
             }
 
             String pluginTag = "[SFFIX] ";
-            utils.info(pluginTag + "/slimefunfix help to see how to fix your broken slimefun items.");
-            utils.info(pluginTag + "/slimefunfix gui to fix your broken slimefun items.");
+            utils.info(pluginTag + "/slimefunfix help для вывода помощи.");
+            utils.info(pluginTag + "/slimefunfix gui для исправления сломанных Slimefun предметов.");
             return true;
         }
     }

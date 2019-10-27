@@ -4,18 +4,18 @@ main: me.ajan12.slimefunfix.SlimefunFix
 authors: [ajan_12]
 api-version: 1.14
 depend: [CS-CoreLib, Slimefun]
-description: A plugin that fixes broken slimefun items.
+description: Плагин, исправляющий сломанные Slimefun предметы.
 
 commands:
   slimefunfix:
-    description: Opens a gui where players can fix their broken slimefun items.
+    description: Открыть интерфейс для исправления сломанных Slimefun предметов.
     aliases: sffix
     usage: /slimefunfix
 
 permissions:
   slimefunfix.use:
-    description: The permission node that gives permission to open the sffix gui.
+    description: Доступ к открытию интерфейса.
     default: true
   slimefunfix.reload:
-    description: The permission node that gives permission to reload the plugin.
+    description: Доступ к перезагрузке плагина.
     default: op
